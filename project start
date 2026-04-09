@@ -1,0 +1,8 @@
+backend
+cd backend
+nodemon index.js
+
+
+
+another terminal
+npm start

@@ -1,0 +1,34 @@
+.man th{
+    border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        padding: 30px;
+        width: 250px;
+        background-color: rgb(230, 42, 42);
+
+}
+td{
+    border: 1px solid black;
+        border-collapse: collapse;
+        text-align: left;
+        padding: 20px;
+        background-color: rgb(226, 216, 216);
+
+}
+.yourbookingh2{
+    padding-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+
+}
+
+.yourbookingbody{
+    align-items: center;
+    justify-content: left;
+    background-color: black;
+    background-size: cover;
+    
+}

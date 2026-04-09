@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.body {
+    background-image: url('../image/backgroundlogin.jpg');
+    font-family: "Poppins", sans-serif;
+    color: white;
+    cursor: context-menu;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.logincontainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: 0 0 10px;
+    border-radius: 10px;
+    padding: 30px 60px;
+}
+
+.input {
+    padding: 10px 15px;
+    border: 2px solid #5d6d88;
+    border-radius: 20px;
+}
+
+.have-account {
+    display: flex;
+}
+
+.have-account p+p {
+    color: #006fdd;
+    cursor: pointer;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px;
+    font-size: 20px;
+    background-color: #344563;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.inputclass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.inputclass p {
+    font-size: 18px;
+    margin-left: 20px;
+    font-weight: 500;
+}

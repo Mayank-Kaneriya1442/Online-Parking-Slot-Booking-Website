@@ -1,0 +1,83 @@
+/* General styles for the Manage Bookings page */
+
+/* Page container */
+.manage-bookings {
+    background-color: #F9FAFB; /* Light grey background */
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: sans-serif;
+}
+
+/* Responsive padding for wider screens */
+@media (min-width: 640px) {
+    .manage-bookings {
+        padding: 2rem;
+    }
+}
+
+/* Main title */
+.manage-bookings h2 {
+    font-size: 1.875rem; /* Large and bold */
+    line-height: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1F2937; /* Dark grey text */
+    text-align: center;
+}
+
+/* Table container styling */
+.manage-bookings table {
+    width: 100%;
+    max-width: 80rem; /* Max width for large screens */
+    margin: 0 auto; /* Center the table */
+    background-color: #FFFFFF; /* White background */
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Ensures rounded corners are applied to content */
+    border-collapse: collapse; /* Clean borders */
+}
+
+/* Table header */
+.manage-bookings thead {
+    background-color: #E5E7EB; /* Lighter grey for the header */
+}
+
+/* Table header cells */
+.manage-bookings th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4B5563; /* Medium grey text */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Table body rows */
+.manage-bookings tbody tr {
+    border-bottom: 1px solid #E5E7EB; /* Row dividers */
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Row hover effect */
+.manage-bookings tbody tr:hover {
+    background-color: #F3F4F6; /* Slightly darker grey on hover */
+}
+
+/* Last row should not have a border */
+.manage-bookings tbody tr:last-child {
+    border-bottom: none;
+}
+
+/* Table data cells */
+.manage-bookings td {
+    padding: 1rem 1.5rem;
+    color: #374151; /* Standard text color */
+    vertical-align: middle;
+}
+
+/* Emphasize the email field */
+.manage-bookings td:first-child {
+    font-weight: 500;
+    color: #1F2937;
+}

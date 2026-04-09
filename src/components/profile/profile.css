@@ -1,0 +1,206 @@
+@media (max-width: 600px) {
+    .profile-modern-card {
+        padding: 24px 8px 24px 8px;
+        max-width: 98vw;
+        min-width: 0;
+        margin-top: 16px;
+    }
+
+    .profile-modern-avatar img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-modern-username {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .profile-modern-detail-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 8px;
+        gap: 8px;
+    }
+
+    .profile-modern-label {
+        min-width: unset;
+        font-size: 1rem;
+    }
+
+    .profile-modern-value {
+        font-size: 0.95rem;
+        margin-left: 0;
+    }
+
+    .profile-modern-btn {
+        width: 100%;
+        padding: 8px 0;
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+    .profile-modern-card {
+        max-width: 90vw;
+        padding: 32px 12px 28px 12px;
+    }
+
+    .profile-modern-avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-modern-username {
+        font-size: 1.5rem;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+h4 {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    margin-bottom: 2px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(14, 14, 14, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 0 500px rgb(0, 0, 0);
+    margin: auto;
+    width: 600px;
+    height: 600px;
+    border-radius: 100px;
+    padding: 3px;
+    text-align: center;
+    border: 5px solid #000000;
+}
+
+.main-profile-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.profile-modern-bg {
+    background: linear-gradient(135deg, #0d8abc 0%, #6dd5ed 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 60px;
+}
+
+.profile-modern-card {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    padding: 40px 32px 32px 32px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.profile-modern-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(13, 138, 188, 0.2);
+    margin-bottom: 16px;
+}
+
+.profile-modern-username {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0d8abc;
+    margin-bottom: 24px;
+}
+
+.profile-modern-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.profile-modern-detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f7fafd;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(13, 138, 188, 0.07);
+    gap: 10px;
+}
+
+.profile-modern-label {
+    font-weight: 500;
+    color: #333;
+    min-width: 90px;
+}
+
+.profile-modern-value {
+    color: #555;
+    font-size: 1rem;
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.profile-modern-btn {
+    color: white;
+    background-color: #222;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+}
+
+.profile-modern-btn:hover {
+    background-color: #333;
+}

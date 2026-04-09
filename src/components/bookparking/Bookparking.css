@@ -1,0 +1,64 @@
+.bookparking-container {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../image/parking.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.booking-main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    backdrop-filter: blur(30px);
+    border-radius: 30px;
+}
+
+.bookingform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.bookingform input {
+    border-radius: 25px;
+}
+
+.bookingform input:hover,
+.bookingform input:focus {
+    background: rgba(255, 255, 255, 0.76);
+    color: black;
+}
+
+h1 {
+    color: wheat;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.btn_booking {
+    padding: 10px 40px;
+    background-color: red;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.a {
+    text-decoration: none;
+    color: #fff;
+}
