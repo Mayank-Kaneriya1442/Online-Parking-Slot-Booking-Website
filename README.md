@@ -4,10 +4,12 @@
 
 ### A real-time parking slot reservation platform built with the MERN stack.
 
-[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-3C873A?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
 </div>
 
@@ -15,22 +17,24 @@
 
 ## 📌 Overview
 
-The **Car Parking Slot Booking System** is a MERN stack web application that allows users to search, book, and manage parking slots in real time. It eliminates the hassle of manually finding parking by providing a live view of slot availability along with seamless online reservation.
+The **Car Parking Slot Booking System** is a MERN stack web application that allows users to book parking slots by providing their vehicle number, date, time, and contact details. It includes a React-based user frontend, a Vite-powered admin dashboard, and a Node.js/Express backend connected to MongoDB with Redis session support.
 
 ---
 
 ## ✨ Features
 
 ### 👤 User
-- Register and log in securely
-- View real-time parking slot availability
-- Book, modify, or cancel reservations
-- View booking history and active reservations
+- Register and log in to a personal account
+- Book a parking slot with car number, date, and time
+- View your current and past bookings (Your Bookings page)
+- Update profile — email, username, and password
+- Contact support via the Contact Us page
 
-### 🛠️ Admin
-- Add, update, and manage parking locations and slots
-- View all bookings and monitor occupancy
-- Manage user accounts
+### 🛠️ Admin (Separate Vite App)
+- Secure admin login
+- View and manage all user bookings
+- Manage registered users (view, edit)
+- Sidebar navigation dashboard
 
 ---
 
@@ -38,32 +42,47 @@ The **Car Parking Slot Booking System** is a MERN stack web application that all
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React.js, CSS3 |
-| Backend | Node.js, Express.js |
-| Database | MongoDB (Mongoose ODM) |
-| Authentication | JWT (JSON Web Tokens) |
-| Architecture | REST API |
+| User Frontend | React 18, React Router v6, react-hook-form, Typed.js |
+| Admin Frontend | React 19 + Vite 7, React Icons |
+| Backend | Node.js, Express.js, Mongoose |
+| Database | MongoDB |
+| Session | Redis, express-session |
+| Other | CORS, dotenv, body-parser |
 
 ---
 
 ## 📁 Folder Structure
 
 ```
-car-parking-slot-booking/
+car-parking-project/
 ├── backend/
-│   ├── controllers/        # Business logic for bookings & slots
-│   ├── models/             # Mongoose schemas (User, Slot, Booking)
-│   ├── routes/             # API route definitions
-│   ├── middleware/         # JWT auth middleware
-│   └── server.js
-├── frontend/
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── pages/          # Page-level views
-│   │   ├── services/       # Axios API calls
-│   │   └── App.js
-│   └── package.json
-└── README.md
+│   ├── index.js                   # Express server & all API routes
+│   ├── .env                       # Environment variables
+│   └── scratch/                   # node-localstorage session store
+├── admin/                         # Separate Vite-based admin panel
+│   └── src/
+│       └── components/
+│           ├── AdminLogin.jsx
+│           ├── ManageBookings.jsx
+│           ├── ManageUsers.jsx
+│           └── Sidebar.jsx
+└── src/                           # Main React user app
+    └── components/
+        ├── Homepage/
+        ├── Navbar/
+        ├── login/
+        ├── Signup/
+        ├── bookparking/           # Slot booking form
+        ├── Yourbooking/           # View user bookings
+        ├── profile/
+        ├── updateemail/
+        ├── updateusername/
+        ├── updatepassword/
+        ├── Country/               # Phone country selector
+        ├── ContactUs/
+        ├── Footer/
+        ├── Subscribe/
+        └── admin/                 # Admin view (inline)
 ```
 
 ---
@@ -73,7 +92,8 @@ car-parking-slot-booking/
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) v16+
-- [MongoDB](https://www.mongodb.com/) running locally or Atlas URI
+- [MongoDB](https://www.mongodb.com/) running locally on `mongodb://localhost:27017`
+- [Redis](https://redis.io/) running locally (optional — for session features)
 
 ### 1. Clone the Repository
 
@@ -86,27 +106,32 @@ cd Online-Parking-Slot-Booking-Website
 
 ```bash
 cd backend
-cp .env.example .env       # Configure your environment variables
 npm install
-npm run dev                # Starts on http://localhost:5000
+node index.js              # Starts on http://localhost:5000
 ```
 
 **Environment Variables (`.env`)**
 ```env
-PORT=5000
-MONGO_URI=mongodb://127.0.0.1:27017/parking_db
-JWT_SECRET=your_jwt_secret_key
+ADMIN_EMAIL=admin@gmail.com
+ADMIN_PASSWORD=admin123
+JWT_SECRET=admin
 ```
 
-### 3. Frontend Setup
+### 3. User Frontend Setup
 
 ```bash
-cd frontend
+cd ..                      # Back to project root
 npm install
 npm start                  # Starts on http://localhost:3000
 ```
 
-Open your browser at **http://localhost:3000**
+### 4. Admin Panel Setup
+
+```bash
+cd admin
+npm install
+npm run dev                # Starts on http://localhost:5173
+```
 
 ---
 
@@ -114,12 +139,19 @@ Open your browser at **http://localhost:3000**
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | User login |
-| GET | `/api/slots` | Get all available slots |
-| POST | `/api/bookings` | Create a booking |
-| GET | `/api/bookings/:userId` | Get user's bookings |
-| DELETE | `/api/bookings/:id` | Cancel a booking |
+| POST | `/register` | Register new user |
+| POST | `/login` | User login |
+| POST | `/booking` | Book a parking slot |
+| GET | `/showSlots` | Get current user's bookings |
+| GET | `/showprofile` | Get logged-in user profile |
+| POST | `/resetemail` | Update user email |
+| POST | `/resetusername` | Update username |
+| POST | `/resetpassword` | Update password |
+| POST | `/admin/login` | Admin login |
+| GET | `/admin/users` | Get all users (Admin) |
+| PUT | `/admin/users/:id` | Update user (Admin) |
+| GET | `/admin/bookings` | Get all bookings (Admin) |
+| GET | `/health` | Server health check |
 
 ---
 
