@@ -1,70 +1,139 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🚗 Car Parking Slot Booking System
 
-## Available Scripts
+### A real-time parking slot reservation platform built with the MERN stack.
 
-In the project directory, you can run:
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-3C873A?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📌 Overview
 
-### `npm test`
+The **Car Parking Slot Booking System** is a MERN stack web application that allows users to search, book, and manage parking slots in real time. It eliminates the hassle of manually finding parking by providing a live view of slot availability along with seamless online reservation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✨ Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 👤 User
+- Register and log in securely
+- View real-time parking slot availability
+- Book, modify, or cancel reservations
+- View booking history and active reservations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🛠️ Admin
+- Add, update, and manage parking locations and slots
+- View all bookings and monitor occupancy
+- Manage user accounts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🛠️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React.js, CSS3 |
+| Backend | Node.js, Express.js |
+| Database | MongoDB (Mongoose ODM) |
+| Authentication | JWT (JSON Web Tokens) |
+| Architecture | REST API |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📁 Folder Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+car-parking-slot-booking/
+├── backend/
+│   ├── controllers/        # Business logic for bookings & slots
+│   ├── models/             # Mongoose schemas (User, Slot, Booking)
+│   ├── routes/             # API route definitions
+│   ├── middleware/         # JWT auth middleware
+│   └── server.js
+├── frontend/
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Page-level views
+│   │   ├── services/       # Axios API calls
+│   │   └── App.js
+│   └── package.json
+└── README.md
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🚀 Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Prerequisites
 
-### Code Splitting
+- [Node.js](https://nodejs.org/) v16+
+- [MongoDB](https://www.mongodb.com/) running locally or Atlas URI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 1. Clone the Repository
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/Mayank-Kaneriya1442/Online-Parking-Slot-Booking-Website.git
+cd Online-Parking-Slot-Booking-Website
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 2. Backend Setup
 
-### Making a Progressive Web App
+```bash
+cd backend
+cp .env.example .env       # Configure your environment variables
+npm install
+npm run dev                # Starts on http://localhost:5000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**Environment Variables (`.env`)**
+```env
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/parking_db
+JWT_SECRET=your_jwt_secret_key
+```
 
-### Advanced Configuration
+### 3. Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+cd frontend
+npm install
+npm start                  # Starts on http://localhost:3000
+```
 
-### Deployment
+Open your browser at **http://localhost:3000**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🔗 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | User login |
+| GET | `/api/slots` | Get all available slots |
+| POST | `/api/bookings` | Create a booking |
+| GET | `/api/bookings/:userId` | Get user's bookings |
+| DELETE | `/api/bookings/:id` | Cancel a booking |
+
+---
+
+## 👨‍💻 Author
+
+**Mayank Kaneriya**
+- 🌐 [LinkedIn](https://www.linkedin.com/in/mayank-kaneriya-011729363/)
+- 📧 mayankkaneriya15@gmail.com
+- 💻 [GitHub](https://github.com/Mayank-Kaneriya1442)
+
+---
+
+<div align="center">
+
+⭐ If you found this project helpful, please give it a star!
+
+</div>
